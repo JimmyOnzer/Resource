@@ -1,0 +1,42 @@
+﻿@page
+@model WebClient.Pages.Resource.ResourceModel
+@{
+}
+
+<br>
+<h2>List of Resources Available</h2>
+<a class="btn btn-primary btn-sm" href="/Resource/Create">Create</a>
+
+<table class="table">
+	<thead>
+		<tr>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Description</th>
+			<th>Location</th>
+			<th>Capacity</th>
+			<th>Is Available?</th>
+			<th>Action</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var resource in Model.listResource)
+		{
+			<tr>
+				<td>@resource.id</td>
+				<td>@resource.name</td>
+				<td>@resource.description</td>
+				<td>@resource.location</td>
+				<td>@resource.capacity</td>
+				<td>@resource.is_available</td>
+				<td>
+					<a class="btn btn-primary btn-sm" href="/Resource/Views/View?id=@resource.id">View</a>
+					
+				</td>
+			</tr>
+
+		}
+	</tbody>
+</table>
+
+<footer>Olwethu Matiwane</footer>
